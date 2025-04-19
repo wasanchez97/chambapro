@@ -33,7 +33,6 @@
                 <li><a href="#aboutus" class="nav-link">Nosotros</a></li>
                 <li><a href="#servicios" class="nav-link">Servicios</a></li>
                 <li><a href="#planes" class="nav-link">Planes y Precios</a></li>
-                <!-- Aquí agregamos el botón Contáctanos dentro del menú hamburguesa -->
                 <li><a href="https://wa.me/573002233344" >Contáctanos</a></li>
             </ul>
         </nav>
@@ -149,6 +148,7 @@
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
+        // Activa el enlace correspondiente al hacer scroll
         function activateLinkOnScroll() {
             let currentSection = "";
             sections.forEach(section => {
@@ -187,9 +187,31 @@
         const toggle = document.getElementById('menu-toggle');
         const nav = document.getElementById('nav');
 
+        // Al hacer clic en el botón del menú hamburguesa, abre o cierra el menú
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('open');
             nav.classList.toggle('active');
+        });
+
+        // Cerrar el menú hamburguesa al hacer clic en cualquier enlace
+        const navLinksForClosing = document.querySelectorAll('.nav-link');
+        navLinksForClosing.forEach(link => {
+            link.addEventListener('click', () => {
+                // Cierra el menú
+                toggle.classList.remove('open');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Desplazamiento suave al hacer clic en los enlaces del menú
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
