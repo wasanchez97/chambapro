@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-<main>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Impulsa tu carrera con herramientas de IA. Mejora tu CV, practica entrevistas y consigue tu empleo ideal con ChambaPro.">
-        <meta name="keywords" content="empleo, CV, inteligencia artificial, entrevistas, jóvenes, Perú, trabajo, ChambaPro">
-        <title>ChambaPro - Impulsa tu Carrera</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-</main> 
-<a href="https://wa.me/573002233344" class="whatsapp-float" target="_blank">
-    <img src="https://img.icons8.com/fluency/48/000000/whatsapp.png" alt="Chat WhatsApp">
-  </a>   
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impulsa tu carrera con herramientas de IA. Mejora tu CV, practica entrevistas y consigue tu empleo ideal con ChambaPro.">
+    <meta name="keywords" content="empleo, CV, inteligencia artificial, entrevistas, jóvenes, Perú, trabajo, ChambaPro">
     <meta name="theme-color" content="#0077b6">
+    <title>ChambaPro - Impulsa tu Carrera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BOTÓN flotante de WhatsApp -->
+    <a href="https://wa.me/573002233344" class="whatsapp-float" target="_blank">
+        <img src="https://img.icons8.com/fluency/48/000000/whatsapp.png" alt="Chat WhatsApp">
+    </a>   
+
     <!-- HEADER -->
     <header class="header" id="navbar">
         <div class="logo">ChambaPro</div>
-        <nav>
+    
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        <nav id="nav">
             <ul>
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#aboutus" class="nav-link">Nosotros</a></li>
                 <li><a href="#servicios" class="nav-link">Servicios</a></li>
                 <li><a href="#planes" class="nav-link">Planes y Precios</a></li>
+                <!-- Aquí agregamos el botón Contáctanos dentro del menú hamburguesa -->
+                <li><a href="https://wa.me/573002233344" class="cta-button">Contáctanos</a></li>
             </ul>
         </nav>
-        <a href="https://wa.me/573002233344" class="cta-button-header">Contáctanos</a>
     </header>
 
     <!-- SECCIÓN DE HERO -->
@@ -35,37 +44,32 @@
         <div class="hero-content">
             <h1>Mejora tu futuro laboral con ChambaPro</h1>
             <p>Optimiza tu CV y prepárate para las entrevistas más importantes de tu vida.</p>
-    
-            <!-- Mensaje destacado -->
-            <div class="highlight-message">
-                🚀 ¡Da el primer paso hacia tu futuro profesional hoy!
-            </div>
-            
+            <div class="highlight-message">🚀 ¡Da el primer paso hacia tu futuro profesional hoy!</div>
             <a href="https://wa.me/573002233344" class="cta-button">¡Mejora tu carrera hoy!</a>
         </div>
     </section>
-    
+
     <!-- SECCIÓN DE NOSOTROS -->
     <section class="about-section" id="aboutus">
-    <div class="about-content">
-        <h2>¿Quiénes somos?</h2>
-        <p>En <strong>ChambaPro</strong> creemos en el talento joven. Nuestra misión es ayudarte a destacar y conseguir ese trabajo ideal.</p>
-        <div class="about-cards">
-            <div class="about-card">
-                <h3>🎯 Misión</h3>
-                <p>Impulsar a los jóvenes peruanos a encontrar oportunidades laborales mediante herramientas inteligentes.</p>
-            </div>
-            <div class="about-card">
-                <h3>🌟 Visión</h3>
-                <p>Ser la plataforma líder en empleabilidad juvenil en Latinoamérica.</p>
-            </div>
-            <div class="about-card">
-                <h3>🤝 Valores</h3>
-                <p>Compromiso, innovación, inclusión y pasión por el crecimiento profesional.</p>
+        <div class="about-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>En <strong>ChambaPro</strong> creemos en el talento joven. Nuestra misión es ayudarte a destacar y conseguir ese trabajo ideal.</p>
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3>🎯 Misión</h3>
+                    <p>Impulsar a los jóvenes peruanos a encontrar oportunidades laborales mediante herramientas inteligentes.</p>
+                </div>
+                <div class="about-card">
+                    <h3>🌟 Visión</h3>
+                    <p>Ser la plataforma líder en empleabilidad juvenil en Latinoamérica.</p>
+                </div>
+                <div class="about-card">
+                    <h3>🤝 Valores</h3>
+                    <p>Compromiso, innovación, inclusión y pasión por el crecimiento profesional.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- SECCIÓN DE SERVICIOS -->
     <section id="servicios" class="section">
@@ -103,7 +107,7 @@
                     <li>Análisis básico de cv</li>
                     <li>Comparación con el puesto que deseas</li>
                     <li>Puntos fuertes destacados</li>
-                    <li>Checklist descargable para mejora tu CV</li>
+                    <li>Checklist descargable para mejorar tu CV</li>
                     <li>1 oportunidad</li>
                 </ul>
                 <a href="https://wa.me/573002233344" class="cta-button">Contáctanos</a>
@@ -141,24 +145,20 @@
 
     <!-- SCRIPT DE JAVASCRIPT -->
     <script>
-        // Obtener todas las secciones y enlaces
+        // Resaltar enlace activo al hacer scroll
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // Función para detectar la sección visible
         function activateLinkOnScroll() {
             let currentSection = "";
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
-
                 if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight) {
                     currentSection = section.getAttribute("id");
                 }
             });
 
-            // Resaltar el enlace correspondiente
             navLinks.forEach(link => {
                 link.classList.remove("active");
                 if (link.getAttribute("href").includes(currentSection)) {
@@ -167,10 +167,9 @@
             });
         }
 
-        // Detectar el scroll
         window.addEventListener("scroll", activateLinkOnScroll);
 
-        // Barra de navegación fija
+        // Navegación sticky
         window.onscroll = function() {stickNavbar()};
 
         var navbar = document.getElementById("navbar");
@@ -183,6 +182,15 @@
                 navbar.classList.remove("sticky");
             }
         }
+
+        // Menú responsive toggle
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            nav.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
