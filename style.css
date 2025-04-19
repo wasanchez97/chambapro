@@ -62,19 +62,6 @@ header nav a.active, header nav a:hover {
     transform: scale(1.05);
 }
 
-.cta-button-header {
-    background-color: #0077b6;
-    padding: 0.6rem 1.8rem;
-    border-radius: 30px;
-    color: white;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button-header:hover {
-    background-color: #0096c7;
-    transform: scale(1.05);
-}
 
 /* Hero Section */
 .hero {
