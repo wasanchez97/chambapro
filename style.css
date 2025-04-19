@@ -29,6 +29,11 @@ header {
     height: 80px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
 header.sticky {
     position: fixed;
@@ -353,8 +358,8 @@ footer a:hover {
     right: 20px;
     z-index: 1000;
     background-color: #25D366;
-    padding: 12px;
-    border-radius: 50%;
+    padding: 20px;
+    border-radius: 70%;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
 }
@@ -364,8 +369,8 @@ footer a:hover {
 }
 
 .whatsapp-float img {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
 }
 
 /* Menú Hamburguesa */
@@ -377,6 +382,10 @@ footer a:hover {
     height: 22px;
     cursor: pointer;
     z-index: 1100;
+    position: absolute;
+    right: 5%; /* Puedes ajustar este valor para más separación si lo deseas */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .menu-toggle span {
@@ -454,4 +463,107 @@ nav ul li .cta-button {
 
 nav ul li .cta-button:hover {
     background-color: #005f8d;
+}
+.section, .about-section {
+    scroll-margin-top: 100px; /* Ajusta este valor según el alto del header en móvil */
+}
+.section {
+    padding: 4rem 2rem;
+    background-color: #f4f8fc;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media(min-width: 768px) {
+    .pricing-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.plan-card {
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h3 {
+    font-size: 1.75rem;
+    color: #004aad;
+    margin-bottom: 0.5rem;
+}
+
+.plan-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.plan-card ul li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    color: #444;
+}
+
+.plan-card ul li::before {
+    content: "✔";
+    color: #28a745;
+    position: absolute;
+    left: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #004aad;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #00337f;
+}
+
+/* Personaliza colores por tipo de plan si deseas */
+.plan-pro {
+    border: 2px solid  #FFD700;;
+}
+
+.plan-premium {
+    border: 2px solid #080808;
+}
+.plan-basic{
+    border: 2px solid #0793de; 
 }
