@@ -137,7 +137,7 @@
                     <li>Entrega del CV descargable</li>
                     <li>1 oportunidad</li>
                 </ul>
-                <a href="https://wa.me/51986076568" class="cta-button">Contáctanos</a>
+                <a href="https://wa.me/51986076568" class="cta-button">Seleccionar Plan</a>
             </div>
             <div class="plan-card plan-pro">
                 <h3>Plan Pro</h3>
@@ -148,7 +148,7 @@
                     <li>Simulación con preguntas difíciles, conductuales y técnicas</li>
                     <li>Perfecto para ganar confianza y mejorar tu desempeño</li>
                 </ul>
-                <a href="https://wa.me/51986076568" class="cta-button">Contáctanos</a>
+                <a href="https://wa.me/51986076568" class="cta-button">Seleccionar Plan</a>
             </div>
             <div class="plan-card plan-premium">
                 <h3>Plan Premium</h3>
@@ -159,7 +159,7 @@
                     <li>Plan personalizado de mejora (técnicas, respuestas y lenguaje corporal)</li>
                     <li>Ideal si quieres sentirte completamente preparado para cualquier entrevista</li>
                 </ul>
-                <a href="https://wa.me/51986076568" class="cta-button">Contáctanos</a>
+                <a href="https://wa.me/51986076568" class="cta-button">Seleccionar Plan</a>
             </div>
             
         </div>
@@ -304,6 +304,50 @@
                 });
             });
         });
+        document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const container = document.querySelector('.carousel-container');
+    const cards = Array.from(track.children);
+    const cardHeight = cards[0].offsetHeight + 25; // altura + margin-bottom
+    const totalCards = cards.length;
+
+    // Clonar las cards para loop infinito visual
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    let position = 0;
+    const speed = cardHeight / 10; // px por segundo (25s por card)
+    let lastTimestamp = null;
+    let paused = false;
+
+    function step(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      if (!paused) {
+        position += (speed * delta) / 1000; // mover según tiempo transcurrido
+        if (position >= cardHeight * totalCards) {
+          position = 0; // reiniciar posición para loop infinito
+        }
+        track.style.transform = `translateY(-${position}px)`;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+
+    // Pausar al hover
+    container.addEventListener('mouseenter', () => {
+      paused = true;
+    });
+    container.addEventListener('mouseleave', () => {
+      paused = false;
+    });
+  });
         
     </script>
 </body>

@@ -409,11 +409,7 @@ h2 {
 }
 
 /* Track del carrusel */
-.carousel-track {
-    display: flex;
-    flex-direction: column;
-    animation: scrollInfinite 25s linear infinite;
-}
+
 
 /* Animación vertical infinita en bucle sin reversa */
 @keyframes scrollInfinite {
