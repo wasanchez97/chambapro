@@ -348,6 +348,54 @@
       paused = false;
     });
   });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  // Solo activar carrusel si pantalla es mayor a 768px
+  if (window.innerWidth > 768) {
+    const track = document.querySelector('.carousel-track');
+    const container = document.querySelector('.carousel-container');
+    const cards = Array.from(track.children);
+    const cardHeight = cards[0].offsetHeight + 25;
+    const totalCards = cards.length;
+
+    // Clonar las cards para loop infinito visual
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    let position = 0;
+    const speed = cardHeight / 25; // px por segundo (25s por card)
+    let lastTimestamp = null;
+    let paused = false;
+
+    function step(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+
+      if (!paused) {
+        position += (speed * delta) / 1000;
+        if (position >= cardHeight * totalCards) {
+          position = 0;
+        }
+        track.style.transform = `translateY(-${position}px)`;
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+
+    container.addEventListener('mouseenter', () => {
+      paused = true;
+    });
+    container.addEventListener('mouseleave', () => {
+      paused = false;
+    });
+  }
+});
+
         
     </script>
 </body>
