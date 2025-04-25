@@ -419,10 +419,7 @@ h2 {
     100% { transform: translateY(-1050px); }
 }
 
-/* Pausar al hacer hover */
-.carousel-container:hover .carousel-track {
-    animation-play-state: paused;
-}
+
 
 /* Cards del carrusel */
 .about-card {
@@ -505,23 +502,44 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
     .carousel-container {
         max-width: 100%;
         height: auto;
         overflow: hidden;
     }
-    .carousel-track {
-        animation: none;
-        flex-direction: column;
-        transform: none !important; /* Asegura que no haya desplazamiento JS */
-    }
+
+
     .about-card {
         width: 100%;
         height: auto;
         margin-bottom: 20px;
     }
-}
 
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .carousel-track {
+        animation: none !important;
+        transform: none !important;
+        flex-direction: column;
+      }
+
+     .about-card.clone {
+    display: none !important;
+  }
+}
 
 /* service */
 .services-section {

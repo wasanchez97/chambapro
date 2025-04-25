@@ -40,7 +40,7 @@
                 <li><a href="#aboutus" class="nav-link">Nosotros</a></li>
                 <li><a href="#services" class="nav-link">Servicios</a></li>
                 <li><a href="#planes" class="nav-link">Planes</a></li>
-                <li><a href="https://wa.me/51986076568">Contáctanos</a></li>
+                <li><a href="https://wa.me/51986076568?text=%C2%A1Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20ChambaPro.">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
@@ -51,7 +51,7 @@
             <h1>Mejora tu futuro laboral con ChambaPro</h1>
             <p>Optimiza tu CV y prepárate para las entrevistas más importantes de tu vida.</p>
             <div class="highlight-message">🚀 ¡Da el primer paso hacia tu futuro profesional hoy!</div>
-            <a href="https://wa.me/51986076568" class="cta-button">¡Mejora tu carrera hoy!</a>
+            <a href="https://wa.me/51986076568?text=%C2%A1Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20ChambaPro." class="cta-button">¡Mejora tu carrera hoy!</a>
         </div>
     </section>
 
@@ -101,7 +101,8 @@
             </div>
             <div class="service-back">
               <p>Obtén un análisis profundo de tu CV. Te damos recomendaciones claras, detectamos errores y te sugerimos cursos personalizados para mejorar tus oportunidades laborales.</p>
-              <button onclick="window.location.href='#'">Solicitar Servicio</button>
+              <button onclick="window.location.href='https://wa.me/51986076568?text=%C2%A1Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20an%C3%A1lisis%20de%20CV.'">Solicitar Servicio</button>
+
             </div>
           </div>
           <div class="service-card">
@@ -113,7 +114,8 @@
             </div>
             <div class="service-back">
               <p>Practica con una entrevista realista. Recibe retroalimentación profesional para mejorar tu lenguaje, respuestas y seguridad al hablar frente a un reclutador.</p>
-              <button onclick="window.location.href='#'">Solicitar Servicio</button>
+              <button onclick="window.location.href='https://wa.me/51986076568?text=%C2%A1Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20an%C3%A1lisis%20de%20CV.'">Solicitar Servicio</button>
+
             </div>
           </div>
         </div>
@@ -232,171 +234,179 @@
     </footer>
     
 
-      
-    <!-- SCRIPT DE JAVASCRIPT -->
-    <script>
-        // Resaltar enlace activo al hacer scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+    
+</body>
+<!-- SCRIPT DE JAVASCRIPT -->
+<script>
+    // Resaltar enlace activo al hacer scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-        // Activa el enlace correspondiente al hacer scroll
-        function activateLinkOnScroll() {
-            let currentSection = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href").includes(currentSection)) {
-                    link.classList.add("active");
-                }
-            });
-        }
-
-        window.addEventListener("scroll", activateLinkOnScroll);
-
-        // Navegación sticky
-        window.onscroll = function() {stickNavbar()};
-
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-
-        function stickNavbar() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
+    // Activa el enlace correspondiente al hacer scroll
+    function activateLinkOnScroll() {
+        let currentSection = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (pageYOffset >= sectionTop - 100 && pageYOffset < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute("id");
             }
-        }
-
-        // Menú responsive toggle
-        const toggle = document.getElementById('menu-toggle');
-        const nav = document.getElementById('nav');
-
-        // Al hacer clic en el botón del menú hamburguesa, abre o cierra el menú
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('open');
-            nav.classList.toggle('active');
         });
 
-        // Cerrar el menú hamburguesa al hacer clic en cualquier enlace
-        const navLinksForClosing = document.querySelectorAll('.nav-link');
-        navLinksForClosing.forEach(link => {
-            link.addEventListener('click', () => {
-                // Cierra el menú
-                toggle.classList.remove('open');
-                nav.classList.remove('active');
-            });
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(currentSection)) {
+                link.classList.add("active");
+            }
         });
-
-        // Desplazamiento suave al hacer clic en los enlaces del menú
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.carousel-track');
-    const container = document.querySelector('.carousel-container');
-    const cards = Array.from(track.children);
-    const cardHeight = cards[0].offsetHeight + 25; // altura + margin-bottom
-    const totalCards = cards.length;
-
-    // Clonar las cards para loop infinito visual
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      track.appendChild(clone);
-    });
-
-    let position = 0;
-    const speed = cardHeight / 10; // px por segundo (25s por card)
-    let lastTimestamp = null;
-    let paused = false;
-
-    function step(timestamp) {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const delta = timestamp - lastTimestamp;
-      lastTimestamp = timestamp;
-
-      if (!paused) {
-        position += (speed * delta) / 1000; // mover según tiempo transcurrido
-        if (position >= cardHeight * totalCards) {
-          position = 0; // reiniciar posición para loop infinito
-        }
-        track.style.transform = `translateY(-${position}px)`;
-      }
-
-      requestAnimationFrame(step);
     }
 
-    requestAnimationFrame(step);
+    window.addEventListener("scroll", activateLinkOnScroll);
 
-    // Pausar al hover
-    container.addEventListener('mouseenter', () => {
-      paused = true;
-    });
-    container.addEventListener('mouseleave', () => {
-      paused = false;
-    });
-  });
-  
-  document.addEventListener('DOMContentLoaded', () => {
-  // Solo activar carrusel si pantalla es mayor a 768px
-  if (window.innerWidth > 768) {
-    const track = document.querySelector('.carousel-track');
-    const container = document.querySelector('.carousel-container');
-    const cards = Array.from(track.children);
-    const cardHeight = cards[0].offsetHeight + 25;
-    const totalCards = cards.length;
+    // Navegación sticky
+    window.onscroll = function() {stickNavbar()};
 
-    // Clonar las cards para loop infinito visual
-    cards.forEach(card => {
-      const clone = card.cloneNode(true);
-      track.appendChild(clone);
-    });
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
 
-    let position = 0;
-    const speed = cardHeight / 25; // px por segundo (25s por card)
-    let lastTimestamp = null;
-    let paused = false;
-
-    function step(timestamp) {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const delta = timestamp - lastTimestamp;
-      lastTimestamp = timestamp;
-
-      if (!paused) {
-        position += (speed * delta) / 1000;
-        if (position >= cardHeight * totalCards) {
-          position = 0;
+    function stickNavbar() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
         }
-        track.style.transform = `translateY(-${position}px)`;
-      }
-
-      requestAnimationFrame(step);
     }
 
-    requestAnimationFrame(step);
+    // Menú responsive toggle
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
 
-    container.addEventListener('mouseenter', () => {
-      paused = true;
+    // Al hacer clic en el botón del menú hamburguesa, abre o cierra el menú
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        nav.classList.toggle('active');
     });
-    container.addEventListener('mouseleave', () => {
-      paused = false;
+
+    // Cerrar el menú hamburguesa al hacer clic en cualquier enlace
+    const navLinksForClosing = document.querySelectorAll('.nav-link');
+    navLinksForClosing.forEach(link => {
+        link.addEventListener('click', () => {
+            // Cierra el menú
+            toggle.classList.remove('open');
+            nav.classList.remove('active');
+        });
     });
+
+    // Desplazamiento suave al hacer clic en los enlaces del menú
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+
+// Efecto Carrusel
+document.addEventListener('DOMContentLoaded', () => {
+const track = document.querySelector('.carousel-track');
+const container = document.querySelector('.carousel-container');
+
+let animationId = null;
+let paused = false;
+let position = 0;
+let speed = 0;
+let cardHeight = 0;
+let totalOriginalCards = 0;
+let clonesAdded = false;
+
+function addClones() {
+const cards = Array.from(track.children);
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  clone.classList.add('clone'); // Muy importante para CSS y eliminación
+  track.appendChild(clone);
+});
+clonesAdded = true;
+}
+
+function removeClones() {
+const clones = track.querySelectorAll('.clone');
+clones.forEach(clone => clone.remove());
+clonesAdded = false;
+}
+
+function startCarousel() {
+if (!clonesAdded) {
+  addClones();
+}
+
+const cards = Array.from(track.children);
+cardHeight = cards[0].offsetHeight + 20; // altura + margin-bottom (ajusta si cambias margen)
+totalOriginalCards = cards.length / 2; // solo las originales
+
+position = 0;
+speed = cardHeight / 10; // px por segundo (25 segundos por card)
+
+function step(timestamp) {
+  if (!step.lastTimestamp) step.lastTimestamp = timestamp;
+  const delta = timestamp - step.lastTimestamp;
+  step.lastTimestamp = timestamp;
+
+  if (!paused) {
+    position += (speed * delta) / 1000;
+    if (position >= cardHeight * totalOriginalCards) {
+      position = 0;
+    }
+    track.style.transform = `translateY(-${position}px)`;
   }
+
+  animationId = requestAnimationFrame(step);
+}
+
+animationId = requestAnimationFrame(step);
+
+container.addEventListener('mouseenter', () => {
+  paused = true;
+});
+container.addEventListener('mouseleave', () => {
+  paused = false;
+});
+}
+
+function stopCarousel() {
+if (animationId) {
+  cancelAnimationFrame(animationId);
+  animationId = null;
+}
+paused = false;
+position = 0;
+track.style.transform = 'translateY(0)';
+}
+
+function checkWidth() {
+if (window.innerWidth > 768) {
+  startCarousel();
+} else {
+  stopCarousel();
+  if (clonesAdded) {
+    removeClones();
+  }
+}
+}
+
+checkWidth();
+
+window.addEventListener('resize', () => {
+checkWidth();
+});
 });
 
-        
-    </script>
-</body>
+
+
+    
+</script>
 </html>
