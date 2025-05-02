@@ -61,24 +61,24 @@
           <div class="about-text">
             <h2>¿Quiénes somos?</h2>
             <p>
-              <strong>En chambaPro creemos que conseguir trabajo no debería sentirse como una misión imposible.</strong>
-              creemos en el talento joven. Nuestra misión es ayudarte a destacar y conseguir ese trabajo ideal.
+              <strong>En ChambaPro, creemos en el potencial de la juventud peruana. </strong>
+              Nuestra misión es empoderarte con herramientas inteligentes que te ayuden a destacar en el mercado laboral. Aspiramos a ser la plataforma líder en empleabilidad juvenil en Latinoamérica, guiados por nuestros valores de compromiso, innovación, inclusión y pasión por el crecimiento profesional. 
             </p>
           </div>
           <div class="carousel-container">
             <div class="carousel-track">
               <div class="about-card">
-                <h3>Nuestra Filosofía</h3>
+                <h3>Transforma tu CV, destaca tu potencial</h3>
                 
-                <p>Sabemos que el camino al primer trabajo no es fácil, pero estamos aquí para hacerlo más sencillo. Creemos en el talento joven, y sabemos que con las herramientas correctas, puedes destacar y lograr más de lo que imaginas.</p>
+                <p>En ChambaPro entendemos que muchos jóvenes no son rechazados por falta de talento, sino por no saber cómo presentarlo. Te damos herramientas que analizan tu CV y te enseñan a hacerlo más claro, atractivo y competitivo. 💡</p>
               </div>
               <div class="about-card">
-                <h3>Nuestro Propósito</h3>
-                <p>Estamos aquí para apoyarte en todo el proceso. No solo te ayudamos a mejorar tu CV o a prepararte para una entrevista, te damos las claves para que des el siguiente paso con confianza, sabiendo que tienes lo necesario para sobresalir.</p>
+                <h3>Practica entrevistas, gana confianza</h3>
+                <p>Pasar el filtro del CV es solo el primer paso. Te ayudamos a prepararte para entrevistas reales con simulaciones interactivas y retroalimentación útil. Llega listo, sin nervios, y demuestra tu verdadero valor. 🎤</p>
               </div>
               <div class="about-card">
-                <h3>Lo que nos mueve</h3>
-                <p>Nos motiva ver cómo los jóvenes encuentran su primer empleo y comienzan a construir su futuro. Estamos aquí para ayudarte a dar ese paso, con las herramientas que realmente necesitas para empezar y avanzar.</p>
+                <h3>Tu crecimiento profesional, con propósito</h3>
+                <p>En ChambaPro no solo te conectamos con oportunidades. Queremos que te descubras, crezcas y te sientas preparado para avanzar. Con nosotros, cada paso tiene sentido y dirección. 🚀</p>
               </div>
             </div>
           </div>
@@ -310,100 +310,6 @@
 
 
 
-// Efecto Carrusel
-document.addEventListener('DOMContentLoaded', () => {
-const track = document.querySelector('.carousel-track');
-const container = document.querySelector('.carousel-container');
-
-let animationId = null;
-let paused = false;
-let position = 0;
-let speed = 0;
-let cardHeight = 0;
-let totalOriginalCards = 0;
-let clonesAdded = false;
-
-function addClones() {
-const cards = Array.from(track.children);
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  clone.classList.add('clone'); // Muy importante para CSS y eliminación
-  track.appendChild(clone);
-});
-clonesAdded = true;
-}
-
-function removeClones() {
-const clones = track.querySelectorAll('.clone');
-clones.forEach(clone => clone.remove());
-clonesAdded = false;
-}
-
-function startCarousel() {
-if (!clonesAdded) {
-  addClones();
-}
-
-const cards = Array.from(track.children);
-cardHeight = cards[0].offsetHeight + 20; // altura + margin-bottom (ajusta si cambias margen)
-totalOriginalCards = cards.length / 2; // solo las originales
-
-position = 0;
-speed = cardHeight / 10; // px por segundo (25 segundos por card)
-
-function step(timestamp) {
-  if (!step.lastTimestamp) step.lastTimestamp = timestamp;
-  const delta = timestamp - step.lastTimestamp;
-  step.lastTimestamp = timestamp;
-
-  if (!paused) {
-    position += (speed * delta) / 1000;
-    if (position >= cardHeight * totalOriginalCards) {
-      position = 0;
-    }
-    track.style.transform = `translateY(-${position}px)`;
-  }
-
-  animationId = requestAnimationFrame(step);
-}
-
-animationId = requestAnimationFrame(step);
-
-container.addEventListener('mouseenter', () => {
-  paused = true;
-});
-container.addEventListener('mouseleave', () => {
-  paused = false;
-});
-}
-
-function stopCarousel() {
-if (animationId) {
-  cancelAnimationFrame(animationId);
-  animationId = null;
-}
-paused = false;
-position = 0;
-track.style.transform = 'translateY(0)';
-}
-
-function checkWidth() {
-if (window.innerWidth > 768) {
-  startCarousel();
-} else {
-  stopCarousel();
-  if (clonesAdded) {
-    removeClones();
-  }
-}
-}
-
-checkWidth();
-
-window.addEventListener('resize', () => {
-checkWidth();
-});
-});
 
 
 
